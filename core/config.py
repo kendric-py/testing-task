@@ -1,0 +1,13 @@
+import os
+import dotenv
+
+dotenv.load_dotenv()
+
+GOOGLE_CREDENTIALS_FILE_PATH = os.getenv('GOOGLE_CREDENTIALS_FILE_PATH')
+DATABASE_URL = os.getenv('DATABASE_URL')
+SHEET_NAME = os.getenv('SHEET_NAME')
+CENTRAL_BANK_LINK = os.getenv('CENTRAL_BANK_LINK')
+CACHE_RATES_BANK_PATH = os.getenv('CACHE_RATES_BANK_PATH')
+REFRESH_SHEET_SECONDS = os.getenv('REFRESH_SHEET_SECONDS')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+ID_ALERT = os.getenv('ID_ALERT')
