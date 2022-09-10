@@ -1,0 +1,8 @@
+aiogram==3.0.0b2
+gspread==5.5.0
+lxml==4.7.1
+postgres==4.0
+python-dotenv==0.21.0
+requests==2.27.0
+sqlalchemy==1.4.36
+
