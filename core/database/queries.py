@@ -1,5 +1,6 @@
 from ast import Delete
-from sqlalchemy import select, delete
+from operator import or_
+from sqlalchemy import select, delete, or_
 from sqlalchemy.orm import Session
 from .models import Order
 from datetime import datetime
@@ -20,7 +21,7 @@ def get_order(session: Session, order_number: int) -> Order | None:
     return(response.scalars().first())
 
 
-def delete_overdue_orders(session: Session) -> list[Order]:
-    query = delete(Order).where(Order.delivery_time < datetime.now().date())
+def delete_not_sheet_orders(session: Session, sheet_orders: list[int]) -> list[Order]:
+    query = delete(Order).where(Order.id.not_in(sheet_orders))
     session.execute(query)
     return(session.commit())
